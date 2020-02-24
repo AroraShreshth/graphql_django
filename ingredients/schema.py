@@ -40,7 +40,7 @@ class Query(object):
         name=kwargs.get('name')
 
         if id is not None:
-            return Category.objects.get(pk.id)
+            return Category.objects.get(pk=id)
         
         if name is not None:
             return Category.objects.get(name=name)
@@ -50,7 +50,7 @@ class Query(object):
         name=kwargs.get('name')
 
         if id is not None:
-            return Ingredients.objects.get(pk.id)
+            return Ingredients.objects.get(pk=id)
         
         if name is not None:
             return Ingredients.objects.get(name=name)
