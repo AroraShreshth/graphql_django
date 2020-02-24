@@ -11,12 +11,46 @@ class IngredientsType(DjangoObjectType):
         model = Ingredients
 
 class Query(object):
+    
+    #Category
+    category = graphene.Field(
+        CategoryType,
+        id=graphene.Int(),
+        name=graphene.String())
     all_categories = graphene.List(CategoryType)
+
+    #Ingredients
+    ingredient = graphene.Field(
+        IngredientsType,
+        id=graphene.Int(),
+        name=graphene.String()
+    )
     all_ingredients = graphene.List(IngredientsType)
 
+    
     def resolve_all_categories(self, info, **kwargs):
         return Category.objects.all()
     
     def resolve_all_ingredients(self, info, **kwargs):
         #We can easily optimize query count in the resolve Method
         return Ingredients.objects.select_related('category').all()
+
+    def resolve_category(self,info, **kwargs):
+        id=kwargs.get('id')
+        name=kwargs.get('name')
+
+        if id is not None:
+            return Category.objects.get(pk.id)
+        
+        if name is not None:
+            return Category.objects.get(name=name)
+    
+    def resolve_ingredients(self, info, **kwargs):
+        id=kwargs.get('id')
+        name=kwargs.get('name')
+
+        if id is not None:
+            return Ingredients.objects.get(pk.id)
+        
+        if name is not None:
+            return Ingredients.objects.get(name=name)
