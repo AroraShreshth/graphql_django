@@ -10,6 +10,7 @@ grapsite-env/*
 activate
 django-admin*
 easy_install*
+gunicorn
 pip*
 python*
 sqlformat
