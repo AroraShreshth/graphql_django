@@ -22,9 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'ba3$-$0n3hkvwy*4gu$6esx668j28b&t-&)$27=2w(@73eoq9b'
-#SECRET_KEY = os.environ.get(SECRET_KEY)
+#SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
 
 ALLOWED_HOSTS = ['shreshth-django-graphql.herokuapp.com']
