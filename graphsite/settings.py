@@ -24,8 +24,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ba3$-$0n3hkvwy*4gu$6esx668j28b&t-&)$27=2w(@73eoq9b'
 #SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
-DEBUG=False
+DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
+#DEBUG=False
 
 ALLOWED_HOSTS = ['shreshth-django-graphql.herokuapp.com']
 
@@ -125,6 +125,7 @@ DEBUG_PROPAGATE_EXCEPTIONS = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

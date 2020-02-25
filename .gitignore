@@ -15,7 +15,7 @@ pip*
 python*
 sqlformat
 .env
-
+staticfiles/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
