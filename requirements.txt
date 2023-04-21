@@ -14,5 +14,5 @@ pytz==2019.3
 Rx==1.6.1
 singledispatch==3.4.0.3
 six==1.14.0
-sqlparse==0.3.0
+sqlparse==0.4.4
 whitenoise==5.0.1
